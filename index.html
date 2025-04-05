@@ -10,12 +10,24 @@ API Key: zqt_j7y5T2UMh2b8UjHbL4e9gGjg7imUwv6BfiTQBQ
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
   <body>
+    <!-- The root element for your React app -->
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Your React app script -->
+    <script type="module">
+      import React from 'react';
+      import ReactDOM from 'react-dom';
+      import App from './App';
+      
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+    <!-- Your iframe can go anywhere else -->
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sxHzLb0RQ6iy9mdQ3yt9MM8uUE86O9s&ehbc=2E312F&noprof=1" width="360" height="520"></iframe>
   </body>
 </html>
