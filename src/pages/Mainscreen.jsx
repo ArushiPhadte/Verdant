@@ -11,7 +11,7 @@ function Mainscreen() {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Welcome to Your HOMEPAGE!</h1>
+      <h1 style={{ marginTop: '50px' }}>Welcome to Your Homepage!</h1>
 
       {/* Button to water the plant */}
       <button
