@@ -19,7 +19,12 @@ function Home1() {
   };
 
   return (
-    <div>
+    <div style={{
+      textAlign: 'center',
+      padding: '20px',
+      width: '80%', // or any fixed width
+      margin: '0 auto', // centers the div horizontally
+    }}>
       <h2>What's your name?</h2>
       <TextField
         label="Name  "

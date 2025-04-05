@@ -35,7 +35,12 @@ function BMainscreen() {
   };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div style={{
+      textAlign: 'center',
+      padding: '20px',
+      width: '80%', // or any fixed width
+      margin: '0 auto', // centers the div horizontally
+    }}>
       <h1 style={{ marginTop: '50px' }}>Welcome to Your Homepage!</h1>
 
       {/* Dropdown menu for selecting an urban garden */}
@@ -50,12 +55,10 @@ function BMainscreen() {
           style={{ padding: '10px', fontSize: '16px' }}
         >
           <option value="">-- Choose a garden --</option>
-          <option value="Garden A">Garden A</option>
-          <option value="Garden B">Garden B</option>
-          <option value="Garden C">Garden C</option>
-          <option value="Garden D">Garden D</option>
-          <option value="Garden E">Garden E</option>
-          <option value="Garden F">Garden F</option>
+          <option value="Garden A">King</option>
+          <option value="Garden B">Shoal</option>
+          <option value="Garden C">Point</option>
+          <option value="Garden D">Great</option>
         </select>
       </div>
 
@@ -87,7 +90,7 @@ function BMainscreen() {
           color: 'gray',
         }}
       >
-        Map Placeholder — Urban Garden Location Will Show Here
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ZQ6Byuk6KettUq2_IxDdGRaaKdKqBx0&ehbc=2E312F" width="640" height="480"></iframe>
       </div>
 
       {/* Button to water the plant (moved to the bottom) */}

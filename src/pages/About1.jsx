@@ -26,7 +26,12 @@ function About1() {
   };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div style={{
+      textAlign: 'center',
+      padding: '20px',
+      width: '80%', // or any fixed width
+      margin: '0 auto', // centers the div horizontally
+    }}>
       <h2>Select your community:</h2>
 
       {/* Dropdown menu for community selection */}

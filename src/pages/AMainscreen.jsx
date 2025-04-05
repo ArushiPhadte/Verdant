@@ -35,11 +35,21 @@ function AMainscreen() {
   };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div style={{
+      textAlign: 'center',
+      padding: '20px',
+      width: '80%', // or any fixed width
+      margin: '0 auto', // centers the div horizontally
+      }}>
       <h1 style={{ marginTop: '50px' }}>Welcome to Your Homepage!</h1>
 
       {/* Dropdown menu for selecting an urban garden */}
-      <div style={{ marginTop: '30px' }}>
+      <div style={{
+        textAlign: 'center',
+        padding: '20px',
+        width: '80%', // or any fixed width
+        margin: '0 auto', // centers the div horizontally
+      }}>
         <label htmlFor="garden" style={{ fontSize: '16px', marginRight: '10px' }}>
           Select an Urban Garden:
         </label>
@@ -50,12 +60,11 @@ function AMainscreen() {
           style={{ padding: '10px', fontSize: '16px' }}
         >
           <option value="">-- Choose a garden --</option>
-          <option value="Garden A">Garden A</option>
-          <option value="Garden B">Garden B</option>
-          <option value="Garden C">Garden C</option>
-          <option value="Garden D">Garden D</option>
-          <option value="Garden E">Garden E</option>
-          <option value="Garden F">Garden F</option>
+          <option value="Garden A">Queens</option>
+          <option value="Garden B">Bayview</option>
+          <option value="Garden C">Bloor</option>
+          <option value="Garden D">Dundas</option>
+          <option value="Garden E">Eglinton</option>
         </select>
       </div>
 
@@ -87,7 +96,7 @@ function AMainscreen() {
           color: 'gray',
         }}
       >
-        Map Placeholder — Urban Garden Location Will Show Here
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sxHzLb0RQ6iy9mdQ3yt9MM8uUE86O9s&ehbc=2E312F" width="640" height="480"></iframe>
       </div>
 
       {/* Button to water the plant (moved to the bottom) */}
