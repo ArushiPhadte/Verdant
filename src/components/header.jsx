@@ -1,4 +1,4 @@
-// Header.jsx
+//HEADER PLACEHOLDER 
 function Header() {
     return <header>Header Placeholder</header>;
   }

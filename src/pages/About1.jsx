@@ -13,13 +13,22 @@ function About1() {
   };
 
   const handleClick = () => {
-    // Navigate to the Mainscreen page after the button click
-    navigate('/Mainscreen');
+    // Navigate to different pages depending on the selected city
+    if (community === 'Community 1') {
+      navigate('/AMainscreen');
+    } else if (community === 'Community 2') {
+      navigate('/BMainscreen');
+    } else if (community === 'Community 3') {
+      navigate('/CMainscreen');
+    } else {
+      alert('Please select a community first!');
+    }
   };
 
   return (
-    <div>
+    <div style={{ textAlign: 'center', padding: '20px' }}>
       <h2>Select your community:</h2>
+
       {/* Dropdown menu for community selection */}
       <select 
         value={community} 
@@ -33,12 +42,13 @@ function About1() {
       </select>
 
       <button
-        onClick={handleClick} // When the button is pressed
+        onClick={handleClick}
         style={{
           marginTop: '30px',
           padding: '10px 20px',
           backgroundColor: 'lightblue',
           borderRadius: '5px',
+          cursor: 'pointer',
         }}
       >
         Let's Start!

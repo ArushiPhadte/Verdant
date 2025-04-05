@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Home1 from './pages/Home1';  // Ensure this path is correct
 import About1 from './pages/About1';  // Ensure this path is correct
-import Mainscreen from './pages/Mainscreen';
+import AMainscreen from './pages/AMainscreen';
+import BMainscreen from './pages/BMainscreen';
+import CMainscreen from './pages/CMainscreen';
 
 function App() {
   // Initialize useNavigate hook inside the functional component
@@ -45,7 +47,9 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home1 />} />
         <Route path="/about" element={<About1 />} />
-        <Route path="/mainscreen" element={<Mainscreen />} />
+        <Route path="/AMainscreen" element={<AMainscreen />} />
+        <Route path="/BMainscreen" element={<BMainscreen />} />
+        <Route path="/CMainscreen" element={<CMainscreen />} />
       </Routes>
     </div>
   );
