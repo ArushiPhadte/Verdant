@@ -1,28 +1,24 @@
-import { useState } from 'react'
-import './App.css'
+//First page
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home1';  // Make sure the file name is Home.jsx
+import About from './pages/About1';  // Make sure the file name is About.jsx
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <BrowserRouter>
       <div>
-        <a href="https://vite.dev" target="_blank">
-        </a>
-        <a href="https://react.dev" target="_blank">
-        </a>
+        <nav>
+          <ul>
+            <li><Link to="/home">Home</Link></li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/home" element={<Home />} />
+        </Routes>
       </div>
-      <h1>Title</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
