@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function CMainscreen() {
   const [wateredCount, setWateredCount] = useState(0);
   const [selectedGarden, setSelectedGarden] = useState('');
+  const [message, setMessage] = useState('');
+
+  const getTodayDate = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0]; // Format: 'YYYY-MM-DD'
+  };
 
   const waterPlant = () => {
-    setWateredCount(wateredCount + 1);
+    if (!selectedGarden) {
+      setMessage('Please select a garden first.');
+      return;
+    }
+
+    const lastWateredKey = `lastWatered_${selectedGarden}`;
+    const lastWateredDate = localStorage.getItem(lastWateredKey);
+    const today = getTodayDate();
+
+    if (lastWateredDate === today) {
+      setMessage(`You've already watered ${selectedGarden} today.`);
+    } else {
+      setWateredCount(wateredCount + 1);
+      localStorage.setItem(lastWateredKey, today);
+      setMessage(`You watered ${selectedGarden}! Great job!`);
+    }
   };
 
   const handleGardenChange = (event) => {
     setSelectedGarden(event.target.value);
+    setMessage(''); // Clear message when garden changes
   };
 
   return (
@@ -41,6 +63,13 @@ function CMainscreen() {
       <div style={{ marginTop: '30px', fontSize: '18px' }}>
         <p>Plants Watered: {wateredCount}</p>
       </div>
+
+      {/* Feedback message */}
+      {message && (
+        <div style={{ color: 'green', marginTop: '10px', fontSize: '16px' }}>
+          {message}
+        </div>
+      )}
 
       {/* Placeholder for Map */}
       <div
