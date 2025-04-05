@@ -1,13 +1,18 @@
-// src/components/Textfield.jsx
 import React from 'react';
 
-const TextField = ({ label, placeholder }) => {
+function TextField({ label, placeholder, value, onChange }) {
   return (
-    <div className="textfield-container">
+    <div>
       <label>{label}</label>
-      <input type="text" placeholder={placeholder} />
+      <input
+        type="text"
+        placeholder={placeholder}
+        value={value} // Bind value to the parent state
+        onChange={onChange} // Handle input change in parent
+      />
     </div>
   );
-};
+}
 
 export default TextField;
+

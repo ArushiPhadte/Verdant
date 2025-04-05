@@ -1,41 +1,50 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import Home from './pages/Home1';  // Ensure this path is correct
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import Home1 from './pages/Home1';  // Ensure this path is correct
+import About1 from './pages/About1';  // Ensure this path is correct
 
 function App() {
   // Initialize useNavigate hook inside the functional component
   const navigate = useNavigate();
+  const [showText, setShowText] = useState(true); // State to control text visibility
+
+  // useEffect hook to ensure clean-up of state or actions on page changes
+  useEffect(() => {
+    // This will be called on every page change to reset/show elements if needed
+    setShowText(true); // Resets state if required whenever the page changes
+  }, []); // Empty array ensures this is only run once on mount
 
   const handleClick = () => {
-    // Navigate to the Home page when the button is clicked
+    // Hide the text when the button is clicked
+    setShowText(false);
+    // Navigate to the Home page after the button click
     navigate('/home');
   };
 
   return (
     <div className="App" style={{ textAlign: 'center' }}>
-
-      <h1 style={{ marginTop: '50px', color: '#000', fontSize: '40px' }}>Verdant</h1>
-
-      {/* Change the paragraph tag to p for standard semantic HTML */}
-      <p style={{ marginTop: '20px', color: '#333' }}>
-        Your urban gardening journey begins here.
-      </p>
+      {showText && (
+        <>
+          <h1 style={{ marginTop: '50px' }}>Verdant</h1>
+          <p style={{ marginTop: '20px'}}>Your urban gardening journey begins here.</p>
+          <button
+            onClick={handleClick} // When the button is pressed
+            style={{
+              marginTop: '30px',
+              padding: '10px 20px',
+              backgroundColor: 'lightblue',
+              borderRadius: '5px',
+            }}
+          >
+            Continue
+          </button>
+        </>
+      )}
 
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Home1 />} />
+        <Route path="/about" element={<About1 />} />
       </Routes>
-
-      <button 
-        onClick={handleClick} // When the button is pressed
-        style={{
-          marginTop: '30px',
-          padding: '10px 20px',
-          backgroundColor: 'lightblue',
-          borderRadius: '5px',
-        }}
-      > 
-        Continue 
-      </button>
     </div>
   );
 }
