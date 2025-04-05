@@ -25,6 +25,7 @@ function Home1() {
       width: '80%', // or any fixed width
       margin: '0 auto', // centers the div horizontally
     }}>
+      <img src="./vite.png" height={"300px"} width={"250px"}></img>
       <h2>What's your name?</h2>
       <TextField
         label="Name  "
@@ -38,7 +39,8 @@ function Home1() {
           marginTop: '30px',
           padding: '10px 20px',
           backgroundColor: 'lightblue',
-          borderRadius: '5px',
+          borderRadius: '10px',
+          borderColor: '#000000',
         }}
       >
         Continue

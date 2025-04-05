@@ -98,7 +98,8 @@ function CMainscreen() {
         style={{
           padding: '15px 30px',
           backgroundColor: 'lightgreen',
-          borderRadius: '5px',
+          borderRadius: '10px',
+          borderColor: '#000000',
           fontSize: '16px',
           marginTop: '40px',
           cursor: 'pointer',

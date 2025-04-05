@@ -75,7 +75,7 @@ function AMainscreen() {
 
       {/* Feedback message */}
       {message && (
-        <div style={{ color: 'green', marginTop: '10px', fontSize: '16px' }}>
+        <div style={{ color: 'green', marginTop: '10px', marginBottom:'2em', fontSize: '16px' }}>
           {message}
         </div>
       )}
@@ -83,7 +83,7 @@ function AMainscreen() {
       {/* Placeholder for Map */}
       <div
         style={{
-          marginTop: '40px',
+          marginTop: '10em',
           height: '300px',
           width: '80%',
           marginLeft: 'auto',
@@ -105,7 +105,8 @@ function AMainscreen() {
         style={{
           padding: '15px 30px',
           backgroundColor: 'lightgreen',
-          borderRadius: '5px',
+          borderRadius: '10px',
+          borderColor: '#000000',
           fontSize: '16px',
           marginTop: '40px',
           cursor: 'pointer',

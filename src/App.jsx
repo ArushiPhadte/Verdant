@@ -5,6 +5,7 @@ import About1 from './pages/About1';  // Ensure this path is correct
 import AMainscreen from './pages/AMainscreen';
 import BMainscreen from './pages/BMainscreen';
 import CMainscreen from './pages/CMainscreen';
+import logo from "/vite.png"
 
 function App() {
   // Initialize useNavigate hook inside the functional component
@@ -25,9 +26,12 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ textAlign: 'center' }}>
+    <div className="App" style={{
+      marginLeft: "2em"
+    }}>
       {showText && (
         <>
+          <img src="/vite.png" height={"300px"} width={"250px"}></img>
           <h1 style={{ marginTop: '50px' }}>Verdant</h1>
           <p style={{ marginTop: '20px'}}>Your urban gardening journey begins here.</p>
           <button

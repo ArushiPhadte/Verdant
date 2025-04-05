@@ -52,7 +52,8 @@ function About1() {
           marginTop: '30px',
           padding: '10px 20px',
           backgroundColor: 'lightblue',
-          borderRadius: '5px',
+          borderRadius: '10px',
+          borderColor: '#000000',
           cursor: 'pointer',
         }}
       >

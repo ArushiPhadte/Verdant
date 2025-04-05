@@ -99,7 +99,8 @@ function BMainscreen() {
         style={{
           padding: '15px 30px',
           backgroundColor: 'lightgreen',
-          borderRadius: '5px',
+          borderColor: '#000000',
+          borderRadius: '10px',
           fontSize: '16px',
           marginTop: '40px',
           cursor: 'pointer',
